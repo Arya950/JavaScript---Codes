@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+</head>
+
+<body>
+    <button onclick="alertDialog()">alert dialod</button><br><br>
+
+    <button onclick="confirmDialog()">confirm dialod</button>
+    <p>confirm Result : <span id="confirmResult"></span></p>
+    <br><br>
+    <button onclick="promptDialog()">prompt dialod</button>
+    <p>prompt Result : <span id="promptResult"></span></p>
+    
+    <button onclick="openWindows()">open Windows</button>
+    
+    <button onclick="closeWindows()"> close Windows</button>
+
+
+
+    <script>
+        function alertDialog() {
+            alert("this is alert dialog");
+        }
+        function confirmDialog() {
+            var v = confirm("Are u Sure?");
+            if (v == true) {
+                document.getElementById("confirmResult").innerText = "ok";
+            }
+            else {
+                document.getElementById("confirmResult").innerText = "cancel";
+            }
+        }
+        function promptDialog() {
+            var v = prompt("Who Are You ?");
+            document.getElementById("promptResult").innerText = v;
+        }
+        function openWindows() {
+            open("https://www.google.com");
+        }
+        function closeWindows() {
+            this.close();
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+    <style>
+        .error {
+            color: rgb(201, 0, 0);
+            font-size: 15px;
+            padding-left: 75px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="#" onsubmit="return formvalid()">
+        First Name :<input type="text" id="firstName">
+        <p id="ferror" class="error"></p>
+        Last Name :<input type="text" id="lastName">
+        <p id="lerror" class="error"></p>
+        <!-- <button>click</button> -->
+        <input type="submit">
+        <p id="demo"></p>
+    </form>
+
+    <script>
+        function formvalid() {
+            let firstName = document.getElementById("firstName").value;
+            let ferror = document.getElementById("ferror");
+            inpValid(firstName,ferror);
+            
+            // if (firstName == "") {
+            //     ferror.innerText = "not valid";
+            //     return false;
+            // }
+            // else if (firstName.length <= 5) {
+            //     ferror.innerText = "min length 5 character";
+            //     return false;
+            // }
+            // else {
+            //     ferror.innerText = "";
+
+            // }
+            let lastName = document.getElementById("lastName").value;
+            let lerror = document.getElementById("lerror");
+            inpValid(lastName,lerror);
+            
+            // if (lastName == "") {
+            //     lerror.innerText = "not valid";
+            //     return false;
+            // }
+            // else if (lastName.length <= 5) {
+            //     lerror.innerText = "min length 5 character";
+            //     return false;
+            // }
+            // else {
+            //     lerror.innerText = "";
+            //     return true;
+            // }
+            document.getElementById("demo").innerHTML=firstName+" "+lastName;
+            return true;
+
+        }
+        function inpValid(fildval,filderr) {
+            if (fildval == "") {
+                filderr.innerText = "not valid";
+                return false;
+            }
+            else if (fildval.length <= 5) {
+                filderr.innerText = "min length 5 character";
+                return false;
+            }
+            else {
+                filderr.innerText = "";
+            } 
+        }
+    </script>
+</body>
+
+</html>

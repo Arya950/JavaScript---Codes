@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch Statement</title>
+</head>
+
+<body>
+    <form action="#">
+        <input id="grade" type="text" onblur="check();">
+        <input type="submit">
+    </form>
+    <script>
+        var grade = document.getElementById("grade").value;
+        function check() {
+            switch (grade) {
+                case 'A': document.write("good job!<br>");
+                    break;
+                case 'B': document.write("Pretty good!<br>");
+                    break;
+                case 'C': document.write("passed<br>");
+                    break;
+                case 'D': document.write("not so good<br>");
+                    break;
+                case 'E': document.write("failed<br>");
+                    break;
+                case 'F': document.write("unknown grade<br>");
+                    break;
+                default: document.write("unknown grade<br>");
+                    break;
+            }
+            document.write("exiting switvh block<br>");
+
+        }
+    </script>
+</body>
+
+</html>

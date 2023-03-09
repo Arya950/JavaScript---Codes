@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre Define Function</title>
+</head>
+
+<body>
+    <script>
+        var str = "Hello World!";
+        document.write(str + "<br><br>");
+
+        // substr
+        document.write(str.substr(3) + "<br>");     //  lo World!
+        document.write(str.substr(3, 4) + "<br>");  //  lo W
+        document.write(str.substr(2, 6) + "<br><br>");  //  lo W
+
+        // toLowerCase
+        document.write(str.toLowerCase() + "<br><br>");  //  hello world!
+
+        // toUpperCase
+        document.write(str.toUpperCase() + "<br><br>");  //  HELLO WORLD!
+        // document.write(` ${str.toLocaleLowerCase()} <br><br>`);  //  hello world!
+
+    </script>
+    <script>
+        document.write(`<h2><u>Math Object</u></h2><br>`);
+
+        //Math Object
+        // var a = new Math();
+        var a = 100, b,c;
+     
+        document.write(Math.sqrt(a)+"<br>");
+        
+        document.write( Math.PI+"<br><br>");
+        
+        document.write( Math.abs(-101)+"<br>"); //101
+        document.write( Math.abs(7.25)+"<br>"); //7.25
+        document.write( Math.abs(-7.25)+"<br>");//7.25
+        document.write( Math.abs("hello")+"<br>");//NaN
+        document.write( Math.abs(null)+"<br>");//0
+        document.write( Math.abs(7.25-10)+"<br><br>");//2.75
+        
+        document.write( Math.ceil(0.6)+"<br>");//1
+        document.write( Math.ceil(0.1)+"<br>");//1
+        document.write( Math.ceil(5.1)+"<br>");//6
+        document.write( Math.ceil(-5.1)+"<br><br>");//5
+        
+        document.write( Math.floor(0.6)+"<br>");//0
+        document.write( Math.floor(0.1)+"<br>");//0
+        document.write( Math.floor(5.1)+"<br>");//5
+        document.write( Math.floor(-5.1)+"<br><br>");//6
+        
+        document.write( Math.max(12,25,-36)+"<br>");//25
+        document.write( Math.max(120,-20,34)+"<br>");//120
+        document.write( Math.max(12,25,36)+"<br><br>");//36
+        
+        document.write( Math.min(12,25,-36)+"<br>");//-36
+        document.write( Math.min(120,-20,34)+"<br>");//-20
+        document.write( Math.min(12,25,36)+"<br><br>");//12
+        
+        document.write(Math.pow(2,2)+"<br>");
+        document.write(Math.pow(1,0)+"<br>");
+        document.write(Math.pow(0,2)+"<br>");
+        document.write(Math.pow(2,6)+"<br><br>");
+
+        document.write( Math.round(0.6)+"<br>");//1
+        document.write( Math.round(0.1)+"<br>");//0
+        document.write( Math.round(5.1)+"<br>");//5
+        document.write( Math.round(-5.5)+"<br>");//5
+        document.write( Math.round(-5.1)+"<br><br>");//-5
+        
+        document.write( Math.exp(2)+"<br><br>");//190.56626845863
+
+        document.write(`<h2><u>Date Object</u></h2><br>`);
+
+        var d = new Date();
+
+        document.write(d.getFullYear()+"  year<br>");//-5
+        document.write(d.getMonth()+" month<br>");//-5
+        document.write(d.getDate()+" Date <br>");//-5
+        document.write(d.getDay()+" Day<br>");//-5
+        document.write(d.getHours()+" Hours<br>");//-5
+        document.write(d.getMinutes()+" minutes<br>");//-5
+        document.write(d.getSeconds()+" seconds<br>");//-5
+        document.write(d.getTime()+" Time<br><br>");//-5
+        d.setDate(15);
+        document.write(d+" set date<br>");//-5
+        d.setMonth(1);
+        document.write(d+"set month<br>");//-5
+        d.setHours(2);
+        document.write(d+"set Hours<br>");//-5
+        d.setMinutes(2);
+        document.write(d+"set Minutes Day<br>");//-5
+
+    </script>
+</body>
+
+</html>

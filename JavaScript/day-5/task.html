@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            border: 2px solid yellow;
+            background-color: #1e835f;
+            border-radius: 2px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="getmsg()">click me to get message</button>
+    <p id="demo"></p>
+    <button onclick="getdt()">click me to get day and time </button><br>
+    <label for="name">Full Name</label><br>
+    <input type="text" id="name"><br>
+    <button onclick="getlen()">click me to get string length</button>
+    <p id="showlen"></p>
+    <p>sum of 10 and 20 value</p>
+    <button onclick="getsum(10,20)">Click for sum</button><br>
+
+    <label for="fname">first Name</label><br>
+    <input type="text" id="fname"><br>
+
+    <label for="lname">last Name</label><br>
+    <input type="text" id="lname"><br>
+
+    <button onclick="getfullname()">click me to get Full Name</button><br>
+    <p id="fullname"></p>
+    <script>
+        function getfullname() {
+            var fname = document.getElementById("fname").value;
+            var lname = document.getElementById("lname").value;
+            var fullname = document.getElementById("fullname").innerText = fname + " " + lname;
+
+        }
+        function getsum(a, b) {
+            alert(`sum a+b is ${a + b}`)
+        }
+        function getdt() {
+            let dt = document.getElementById("demo");
+            var d = new Date();
+            dt.innerText = `${d.getDate()}-${d.getMonth() + 1}-${d.getFullYear()}`;
+
+        }
+        function getmsg() {
+            document.getElementById("demo").innerText = "welcome to JS";
+
+
+        }
+        function getlen() {
+            var name = document.getElementById("name").value;
+            document.getElementById("showlen").innerText = name.length;
+            // alert();
+        }
+    </script>
+</body>
+
+</html>

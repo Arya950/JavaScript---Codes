@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <title>Document</title>
+      <script>
+            function Warn(){
+                  alert("this is a warning message!");
+                  document.write("this is a warning message!");
+
+
+            }
+
+            function getconfirmation(){
+                  var retVal=confirm("do you want to continue ?");
+                  if(retVal==true){
+                        document.write("user wants to continue!");
+                        return true;
+                  }else{
+                        document.write("user does not want to continue!");
+                        return false;
+                  }
+            }
+
+            function getValue(){
+                  var retVal=prompt("enter your name:","your name here");
+                  document.write("you have entered:"+retVal);
+            }
+      </script>
+
+</head>
+
+<body>
+            <p>click the following button to see the result:</p>
+      <form>
+            <input type="button" value="click me" onclick="Warn();"/>
+      </form>
+
+      <p>click the following button to see the result:</p>
+      <form>
+            <input type="button" value="click me" onclick="getconfirmation();"/>
+      </form>
+
+      <p>click the following button to see the result:</p>
+      <form>
+            <input type="button" value="click me" onclick="getValue();"/>
+      </form>
+
+      <p>set the variable to different value and they try...</p>
+
+      <p>set the variable to different value and they try...</p>
+
+      <p>set the variable to different value and they try...</p>
+
+
+</body>
+
+</html>

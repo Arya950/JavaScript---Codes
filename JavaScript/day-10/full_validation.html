@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Validation</title>
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            background: #f9f9f9;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        h2 {
+            text-align: center;
+            text-decoration: underline;
+        }
+
+        form {
+            width: 100%;
+            background: #fff;
+            padding: 15px 40px 40px;
+            border: 1px solid #ccc;
+            margin: 50px auto 0;
+            border-radius: 5px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input,
+        select,
+        .box {
+            border: 1px solid #ccc;
+            padding: 10px;
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            border-radius: 2px;
+        }
+
+        .row {
+            padding-bottom: 10px;
+        }
+
+        .error {
+            color: red;
+            font-size: 90%;
+            margin: 5px 0 10px 0;
+        }
+
+        input[type="submit"] {
+            font-size: 110%;
+            font-weight: 100;
+            background: #006dcc;
+            border-color: #016BC1;
+            box-shadow: 0 3px 0 #0165b6;
+            color: #fff;
+            margin-top: 10px;
+            cursor: pointer;
+            transition: 1s all;
+        }
+
+        input[type="submit"]:hover {
+            background: #96cbea;
+            color: #006dcc;
+        }
+
+        input[type="radio"]{
+            display: inline;
+            width: 10%;
+        }
+
+
+        .form-inline {
+            border: 1px solid #ccc;
+            padding: 8px 10px 4px;
+            border-radius: 2px;
+        }
+
+        .form-inline label,
+        .form-inline input {
+            display: inline-block;
+            width: auto;
+            padding-right: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <form action="welcome.html" name="contactForm" onsubmit="return validationForm() " method="post">
+            <h2>Application Form</h2>
+            <div class="row">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name">
+                <div class="error" id="nameErr"></div>
+            </div>
+            <div class="row">
+                <label for="email">Email Address</label>
+                <input type="name" id="email" name="email">
+                <div class="error" id="emailErr"></div>
+            </div>
+            <div class="row">
+                <label for="mobile"></label>Number</label>
+                <input type="number" id="mobile" name="mobile" maxlength="10">
+                <div class="error" id="mobileErr"></div>
+            </div>
+            <div class="row"><label for="country">Country</label>
+                <select name="country" id="country">
+                    <option value="select">select</option>
+                    <option value="india">India</option>
+                    <option value="japan">Japan</option>
+                    <option value="usa">usa</option>
+                    <option value="canada">Canada</option>
+                </select>
+                <div class="error" id="countryErr"></div>
+            </div>
+            <div class="row" >
+                <label>Gender</label>
+                <div class="box">
+                <input type="radio" id="gender" name="gender" value="male">Male
+                <input type="radio" id="gender" name="gender" value="female">Female
+                </div>
+                <div class="error" id="mobileErr"></div>
+            </div>
+            <input type="submit">
+        </form>
+    </div>
+    <script>
+        function printError(elemId, hintMsg) {
+            document.getElementById(elemId).innerHTML = hintMsg;
+            return false;
+        }
+        function validationForm() {
+            // if (nameVlidation() != true || emailValidation() != true || mobileValidation() != true) {
+            //     return false;
+            // }
+            // else {
+            //     return true;
+            // }
+        // }
+        // function nameVlidation() {
+            var name = document.contactForm.name.value;
+            var nameErr=true,emailErr=true,mobileErr=true;
+            // Name Validation 
+            if (name == "") {
+                // console.log("Please Enter Your name");
+                printError("nameErr", "Please Enter Your name");
+                nameErr = false;
+            }
+            else {
+                var regex = /^[a-zA-Z\s]+$/;
+                if (regex.test(name) === false) {
+                    // console.log("Please Enter a valid name");
+                    printError("nameErr", "Please Enter a valid name");
+                    nameErr = false;
+                }
+                else {
+                    // console.log("Done");
+                    printError("nameErr", "");
+                    // return true;
+                }
+            }
+        // }
+        // function emailValidation() {
+            var email = document.contactForm.email.value;
+            // var regex = /^[a-z0-9@.\s]+$/;
+            if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)!=true) {
+                printError("emailErr", "Please Enter Valid Email!");
+                emailErr = false;
+            }
+            else{
+                printError("emailErr", "");
+
+            }
+            // nameErr = false;
+
+        // }
+        // function mobileValidation() {
+            var mobile = document.contactForm.mobile.value;
+
+            if (mobile.length != 10) {
+                printError("mobileErr", "Please Enter Valid Mobile Number!");
+                mobileErr = false;
+            }
+            else {
+                printError("mobileErr", "");
+            }
+            if (nameErr == false|| emailErr== false||mobileErr==false) {
+                return false;
+            }
+            return true;
+        }
+       
+    </script>
+</body>
+
+</html>

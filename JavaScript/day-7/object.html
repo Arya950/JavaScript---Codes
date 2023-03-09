@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+<body>
+    <button onclick="objectFun()">Get Object Value</button>
+    <p id="obj"></p>
+    <button onclick="arrayFun()">Get Array Value</button>
+    <p id="arrayvalue"></p>
+    <button onclick="mapFun()">Get Map Value</button>
+    <p id="mapvalue"></p>
+    <script>
+        function objectFun() {
+            var emp = new Object();
+            emp.id=101;
+            emp.name="dharmiko";
+            emp.salary=50000;
+            document.getElementById("obj").innerHTML=`${emp.id}-${emp.name}-${emp.salary}`;
+        }
+        function arrayFun() {
+            var i ;
+            var emp = new Array();
+            emp[0]="om";
+            emp[1]="hari";
+            emp[2]="krishna";
+            var string = "";
+            for (let i = 0; i < emp.length; i++) {
+                string+=`${emp[i]} `;
+            }
+            document.getElementById("arrayvalue").innerText = string;
+        }
+        function mapFun() {
+            //create map 
+            const emp = new Map([
+                [1,'krish'],
+                [2,'om'],
+                [3,'radhe']
+            ]);
+            document.getElementById("mapvalue").innerText = emp.get(1) ;
+        }
+    </script>
+</body>
+</html>

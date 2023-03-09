@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Viva</title>
+</head>
+
+<body>
+    <div class="main">
+        <center>
+            <form action="Data.html" method="post" onsubmit="data()">
+
+                <table>
+                    <tr>
+                    <td colspan="2">
+                        <h1 style="color: red;">
+                            <img src="employees.png" alt="#" height="40px">
+                            Employee Registration Form
+                        </h1>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="radio" name="gen" checked>Mr.
+                        <input type="radio" name="gen">Mrs.
+                        <input type="radio" name="gen">Ms.
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>First Name</b></td>
+                    <td>
+                        <input type="text" name="name" placeholder="First Name"  id="name" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Last Name</b></td>
+                    <td>
+                        <input type="text" name="name" placeholder="Last Name" id="lname">
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Mail Address1</b></td>
+                    <td>
+                        <input type="email" name="name">
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Mail Address2</b></td>
+                    <td>
+                        <input type="email" name="name">
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>City</b></td>
+                    <td>
+                        <input type="text" name="name">
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>State</b></td>
+                    <td>
+                        <select name="state" id="state">
+                            <option value="Gujarat" selected>Gujarat</option>
+                            <option value="goa">Goa</option>
+                            <option value="delhi">Andra pradesh</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Zip</b></td>
+                    <td>
+                        <input type="text" name="" id="">
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Upload Photo</b></td>
+                    <td>
+                        <input type="file" name="" id="">
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>E-Mail</b></td>
+                    <td>
+                        <input type="email" name="" id="">
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Mobile</b></td>
+                    <td>
+                        <input type="number" placeholder="+91" name="" id="">
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Language Know</b></td>
+                    <td>
+                        <input type="checkbox" name="" id="">Gujarati <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="checkbox" name="" id="" >Hindi<br>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="checkbox" name="" id="" >English<br>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="checkbox" name="" id="">Marathi<br>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Additional Information</b></td>
+                    <td>
+                        <textarea   cols="25" rows="5" placeholder="optional" ></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="submit" width="10px" height="5px">
+                        <input type="reset" value="reset" width="10px" height="5px">
+                    </td>
+                </tr>
+                
+            </table>
+        </form>
+        </center>
+    </div>
+    <script>
+       function data(){
+       let fname = document.getElementById("name").value;
+       let lname = document.getElementById("lname").value;
+        alert(fname);
+        alert(lname)
+       }
+    </script>
+</body>
+
+</html>

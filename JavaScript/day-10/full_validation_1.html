@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Validation</title>
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            background: #f9f9f9;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        h2 {
+            text-align: center;
+            text-decoration: underline;
+        }
+
+        form {
+            width: 100%;
+            background: #fff;
+            padding: 15px 40px 40px;
+            border: 1px solid #ccc;
+            margin: 50px auto 0;
+            border-radius: 5px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input,
+        select {
+            border: 1px solid #ccc;
+            padding: 10px;
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            border-radius: 2px;
+        }
+
+        .row {
+            padding-bottom: 10px;
+        }
+
+        .error {
+            /* display: none; */
+            color: red;
+            font-size: 90%;
+            /* me */
+            margin: 5px 0 10px 0;
+        }
+
+        input[type="submit"] {
+            font-size: 110%;
+            font-weight: 100;
+            background: #006dcc;
+            border-color: #016BC1;
+            box-shadow: 0 3px 0 #0165b6;
+            color: #fff;
+            margin-top: 10px;
+            cursor: pointer;
+            transition: 1s all;
+        }
+
+        input[type="submit"]:hover {
+            background: #96cbea;
+            color: #006dcc;
+        }
+
+        .form-inline {
+            border: 1px solid #ccc;
+            padding: 8px 10px 4px;
+            border-radius: 2px;
+        }
+
+        .form-inline label,
+        .form-inline input {
+            display: inline-block;
+            width: auto;
+            padding-right: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <form action="welcome.html" name="contactForm" onsubmit="return validationForm(event) " method="post">
+            <h2>Application Form</h2>
+            <div class="row">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name">
+                <div class="error" id="nameErr"></div>
+            </div>
+            <div class="row">
+                <label for="email">Email Address</label>
+                <input type="name" id="email" name="email">
+                <div class="error" id="emailErr"></div>
+            </div>
+            <div class="row">Mobile Number</label>
+                <input type="number" id="mobile" name="mobile" maxlength="10">
+                <div class="error" id="mobileErr"></div>
+            </div>
+            <input type="submit">
+        </form>
+    </div>
+    <script>
+        function printError(elemId, hintMsg) {
+            document.getElementById(elemId).innerHTML = hintMsg;
+            return false;
+        }
+        function validationForm(event) 
+        {
+            // if (nameVlidation() != true || emailValidation() != true || mobileValidation() != true) {
+            //     return false;
+            // }
+            // else {
+            //     return true;
+            // }
+        // }
+        // function nameVlidation() {
+            var name = document.contactForm.name.value;
+            // Name Validation 
+            if (name == "") {
+                // console.log("Please Enter Your name");
+                printError("nameErr", "Please Enter Your name");
+                return false;
+            }
+            else {
+                var regex = /^[a-zA-Z\s]+$/;
+                if (regex.test(name) === false) {
+                    // console.log("Please Enter a valid name");
+                    printError("nameErr", "Please Enter a valid name");
+                    return false;
+                }
+                else {
+                    // console.log("Done");
+                    printError("nameErr", "");
+                    // return true;
+                }
+            }
+        // }
+        // function emailValidation() {
+            var email = document.contactForm.email.value;
+            // var regex = /^[a-z0-9@.\s]+$/;
+            if(email=="")
+            {
+                printError("emailErr", "please Enter a email");
+                return false;
+            }
+            if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)!=true) {
+                printError("emailErr", "Please Enter Valid Email!");
+                return false;
+            }
+            else{
+                printError("emailErr", "");
+
+            }
+            // if(nameErr || emailErr == true)
+            // {
+            //     return false;
+            // }
+            // return false;
+
+        // }
+        // function mobileValidation() {
+            var mobile = document.contactForm.mobile.value;
+
+            if (mobile.length != 10) {
+                printError("mobileErr", "Please Enter Valid Mobile Number!");
+                return false;
+            }
+            else if(/^[1-9]\d{9}$/.test(mobile)=== false  )
+                {
+                   printError("mobileErr","Please Enter A valid Mobile number")
+                    return false;
+                }
+                else
+                { 
+                    printError("mobileErr", "");
+                    return true;
+                }
+            
+        }
+       
+    </script>
+</body>
+
+</html>

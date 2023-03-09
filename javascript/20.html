@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre Define Function</title>
+</head>
+
+<body>
+    <script>
+        var str = "Hello World!";
+        document.write(str + "<br><br>");
+
+        // substr
+        document.write(str.substr(3) + "<br>");     //  lo World!
+        document.write(str.substr(3, 4) + "<br>");  //  lo W
+        document.write(str.substr(2, 6) + "<br><br>");  //  lo W
+
+        // toLowerCase
+        document.write(str.toLowerCase() + "<br><br>");  //  hello world!
+
+        // toUpperCase
+        document.write(str.toUpperCase() + "<br><br>");  //  HELLO WORLD!
+        // document.write(` ${str.toLocaleLowerCase()} <br><br>`);  //  hello world!
+
+    </script>
+    
+</body>
+
+</html>

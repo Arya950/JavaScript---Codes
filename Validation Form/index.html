@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+</head>
+
+<body>
+  <h1 class="text-green text-center font-weight-bold" style="font-size: 40px;">
+    Form Validation In JavaScript
+  </h1>
+
+  <h4 class="text-blue text-center font-weight-bold" style="font-size: 20px;">
+    Sign Up
+  </h4>
+
+  <div class="container">
+    <br />
+
+    <div class="col-lg-5 m-auto d-block">
+      <form action="welcome.html" onsubmit="return validation(event)" class="bg-light">
+        <div class="form-group">
+          <label for="name" class="font-weight-regular"> Name </label>
+          <input type="text" name="name" class="form-control" id="name" onblur="nameVlid()" autocomplete="off" />
+          <span id="Name" class="text-danger font-weight-regular"> </span>
+        </div>
+
+        <div class="form-group">
+          <label class="font-weight-regular"> Email </label>
+          <input type="text" name="email" class="form-control" id="emails" onblur="emailVlid()" autocomplete="off" />
+          <span id="emailids" class="text-danger font-weight-regular"> </span>
+        </div>
+
+        <div class="form-group">
+          <label for="user" class="font-weight-regular"> Username </label>
+          <input type="text" name="user" class="form-control" id="user" onblur="userVlid()" autocomplete="off" />
+          <span id="username" class="text-danger font-weight-regular"> </span>
+        </div>
+
+        <div class="form-group">
+          <label class="font-weight-regular"> Password </label>
+          <input type="password" name="pass" class="form-control" id="pass" onblur="passVlid()" autocomplete="off" />
+          <span id="passwords" class="text-danger font-weight-regular">
+          </span>
+        </div>
+
+        <div class="form-group">
+          <label class="font-weight-regular"> Confirm Password </label>
+          <input type="password" name="conpass" class="form-control" id="conpass" onblur="conpassVlid()"
+            autocomplete="off" />
+          <span id="confrmpass" class="text-danger font-weight-regular">
+          </span>
+        </div>
+
+        <div class="form-group">
+          <label class="font-weight-regular"> Mobile Number </label>
+          <input type="text" name="mobile" class="form-control" id="mobileNumber" onblur="numberVlid()"
+            autocomplete="off" />
+          <span id="mobileno" class="text-danger font-weight-regular"> </span>
+        </div>
+
+        <input type="submit" name="submit" value="Submit" class="btn btn-primary" autocomplete="off" />
+        <input type="reset" name="reset" value="Reset" class="btn btn-secondary" autocomplete="off" />
+        &emsp;&emsp;&emsp;Already have an account?
+        <a href="project7.html">Login</a>
+      </form>
+
+      <br /><br />
+    </div>
+  </div>
+
+  <script type="text/javascript" src="validationScript.js"></script>
+  <script>
+    //All field Validation
+    function validation(event) {
+      if (nameVlid() != true && emailVlid() != true && userVlid() != true && passVlid() != true && conpassVlid() != true && numberVlid() != true) {
+        event.preventDefault();
+        return false;
+      }
+      return true;
+    }
+  </script>
+</body>
+
+</html>

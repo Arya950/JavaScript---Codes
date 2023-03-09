@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+</head>
+
+<body>
+
+    <form action="#" name="muform" onsubmit="formValidation()">
+        <p>
+            Name : <input type="text" name="name" id="name">
+        <p id="name"></p>
+        password : <input type="password" name="password" id="pass">
+        <p id="epass"></p>
+        Re-Enter Password : <input type="password" name="cpassword" id="cpass">
+        <p id="ecpass"></p>
+        Mobile : <input type="number" name="mobile" id="mob">
+        <p id="mob"></p>
+        Email : <input type="email" name="email" id="email">
+        <p id="eemail"></p>
+        <button type="submit">Text Password Validate</button>
+        <!-- <button onclick="formValidation()">Text Password Validate</button> -->
+        </p>
+    </form>
+    <script>
+        function formValidation() {
+            var name = document.getElementById('name').value;
+            // findNull(name);
+            // console.log(name);
+            var pass = document.getElementById('pass').value;
+            // console.log(pass);
+            var cpass = document.getElementById('cpass').value;
+            // console.log(cpass);
+            var mob = document.getElementById('mob').value;
+            // console.log(mob);
+            var email = document.getElementById('email').value;
+            // //chavdasandip2908@gmail.com
+            var atposition = email.indexOf("@");
+            var dotposition = email.lastIndexOf(".");
+            // console.log(atposition, dotposition, email.length);
+
+
+            if (name == null || name == "") {
+                alert("name can't be Blank");
+                return false;
+            }
+            else if (pass.length < 6) {
+                alert("Password must be at least 6 Characters long");
+                return false;
+            }
+            else if (pass != cpass) {
+                alert("Password & Re-Password must be same!");
+                return false;
+            }
+            else if (mob.length != 10) {
+                alert("Mobile Must be 10 Digits!");
+                return false;
+            }
+        //              16 <1             22              16+2=18           22+2=24             26         
+             if (atposition < 1 || dotposition < atposition + 2 || dotposition + 2 >= email.length) {
+                alert("Plese Enter a Valid Email address");
+                return false;
+            }
+
+        }
+        function find(fild) {
+            if (fild == "") {
+
+            }
+        }
+    </script>
+</body>
+
+</html>

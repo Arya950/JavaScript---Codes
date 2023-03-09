@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            background: #ccc;
+        }
+        div{
+            border: #ccc;
+            border: 1px solid black;
+            background: #999;
+            height: 100%px;
+            width: 50%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+<div class="main">
+
+    <label for="test">input any number:</label>
+    <input type="number" id="test">
+    <p id="show"></p>
+    <button onclick="get()">click for square</button>
+    <button onclick="gets()">click for cube</button><br><br>
+    <label for="">Enter first Number:</label>
+    <input type="number" id="fnum"><br><br>
+    <label for="">Enter second Number:</label>
+    <input type="number" id="snum"><br>
+    <p id="swapnum"></p>
+    <p id="swap1num"></p>
+    <button id="swap" onclick="swap()"> Swap Number</button>
+</div>
+</center>
+<script>
+        function swap()
+        {
+            let f = document.getElementById('fnum').value;
+            let s = document.getElementById('snum').value;
+            let c = null;
+            c=f;
+            f=s;
+            s=c;
+            console.log(f);
+            console.log(s);
+
+
+            document.getElementById('swapnum').innerHTML=f + ":First";
+            document.getElementById('swap1num').innerHTML=s +":Second";
+        }
+        function get(){
+            let n = document.getElementById('test').value;
+            document.getElementById('show').innerHTML=n*n;
+        }
+        function gets(){
+            let n = document.getElementById('test').value;
+            document.getElementById('show').innerHTML=n*n*n;
+        }
+    </script>
+</body>
+</html>
